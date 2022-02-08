@@ -187,6 +187,7 @@ export class OfficeSpace {
     if ((jobCount + unassignedCount) < amount) return false;
 
     for (let i = 0; i < this.employees.length; ++i) {
+      if (jobCount === amount) break;
       if (this.employees[i].pos === EmployeePositions.Unassigned) {
         if (jobCount <= amount) {
           this.employees[i].pos = job;
